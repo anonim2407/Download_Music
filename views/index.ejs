@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <title>DownloadMusic</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="header" action="/convert-mp3" method="POST" id="form">
+        <h1 class="header-titulo"><i class="fa-brands fa-youtube"></i>DownloadMusic</h1>
+        <div >
+        <h4>Introduzca el nombre de la canción que desea dercargar</h4>
+        <div class="search">
+          <input class="text-busqueda" type="text" name="videoId" placeholder="Nombre Cancion:" />
+          <button class="boton-busqueda" id="convert-btn"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#808080" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <circle cx="10" cy="10" r="7" />
+            <line x1="21" y1="21" x2="15" y2="15" />
+          </svg></button>
+        </div>
+      </div>
+      </form>
+    </div>
+    <main class="container">
+   
+
+      <% if(typeof success != "undefined" && success) {%> 
+        
+    <section id="resultados" class="container resultados">
+      <article >
+        <form action="/descargar" method="POST">
+        <div class="success">
+          <p><%= song_title1%></p>
+          <img src="<%= song_image1%>" alt="" />
+          <input type="hidden" name="codSong" value="<%= song_id1 %>">
+          <button id="download-btn">DOWNLOAD</button>
+        </div>
+      </form>
+      </article>
+
+
+      <article >
+        <form action="/descargar" method="POST">
+        <div class="success">
+          <p><%= song_title2%></p>
+          <img src="<%= song_image2%>" alt="" />
+          <input type="hidden" name="codSong" value="<%= song_id2 %>">
+          <button id="download-btn">DOWNLOAD</button>
+        </div>
+      </form>
+      </article>
+      <article >
+        <form action="/descargar" method="POST">
+        <div class="success">
+          <p><%= song_title3%></p>
+          <img src="<%= song_image3%>" alt="" />
+          <input type="hidden" name="codSong" value="<%= song_id3 %>">
+          <button id="download-btn">DOWNLOAD</button>
+        </div>
+        </form>
+      </article>
+      <article >
+        <form action="/descargar" method="POST">
+        <div class="success">
+          <p><%= song_title4%></p>
+          <img src="<%= song_image4%>" alt="" />
+          <input type="hidden" name="codSong" value="<%= song_id4 %>">
+          <button id="download-btn">DOWNLOAD</button>
+        </div>
+        </form>
+      </article>
+      <article >
+        <form action="/descargar" method="POST">
+        <div class="success">
+          <p><%= song_title5%></p>
+          <img src="<%= song_image5%>" alt="" />
+          <input type="hidden" name="codSong" value="<%= song_id5 %>">
+          <button id="download-btn">DOWNLOAD</button>
+        </div>
+        </form>
+      </article>
+      <article >
+        <form action="/descargar" method="POST">
+        <div class="success">
+          <p><%= song_title6%></p>
+          <img src="<%= song_image6%>" alt="" />
+          <input type="hidden" name="codSong" value="<%= song_id6 %>">
+          <button id="download-btn">DOWNLOAD</button>
+        </div>
+        </form>
+      </article>
+      <article >
+        <form action="/descargar" method="POST">
+        <div class="success">
+          <p><%= song_title7%></p>
+          <img src="<%= song_image7%>" alt="" />
+          <input type="hidden" name="codSong" value="<%= song_id7 %>">
+          <button id="download-btn">DOWNLOAD</button>
+        </div>
+        </form>
+      </article>
+      <article >
+        <form action="/descargar" method="POST">
+        <div class="success">
+          <p><%= song_title8%></p>
+          <img src="<%= song_image8%>" alt="" />
+          <input type="hidden" name="codSong" value="<%= song_id8 %>">
+          <button id="download-btn">DOWNLOAD</button>
+        </div>
+        </form>
+      </article>
+      <article >
+        <form action="/descargar" method="POST">
+        <div class="success">
+          <p><%= song_title9%></p>
+          <img src="<%= song_image9%>" alt="" />
+          <input type="hidden" name="codSong" value="<%= song_id9 %>">
+          <button id="download-btn">DOWNLOAD</button>
+        </div>
+        </form>
+      </article>
+      <article >
+        <form action="/descargar" method="POST">
+        <div class="success">
+          <p><%= song_title10%></p>
+          <img src="<%= song_image10%>" alt="" />
+          <input type="hidden" name="codSong" value="<%= song_id10 %>">
+          <button id="download-btn">DOWNLOAD</button>
+        </div>
+        </form>
+      </article> 
+      <article >
+        <form action="/descargar" method="POST">
+        <div class="success">
+          <p><%= song_title11%></p>
+          <img src="<%= song_image11%>" alt="" />
+          <input type="hidden" name="codSong" value="<%= song_id11 %>">
+          <button id="download-btn">DOWNLOAD</button>
+        </div>
+        </form>
+      </article> 
+      <article >
+        <form action="/descargar" method="POST">
+        <div class="success">
+          <p><%= song_title12%></p>
+          <img src="<%= song_image12%>" alt="" />
+          <input type="hidden" name="codSong" value="<%= song_id12 %>">
+          <button id="download-btn">DOWNLOAD</button>
+        </div>
+        </form>
+      </article> 
+       </section>
+      <% } %>
+
+
+  </main>  
+
+    <script src="/app.js"></script>
+    
+      
+    </body>
+  </body>
+</html>
