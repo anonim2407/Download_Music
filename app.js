@@ -12,7 +12,7 @@ const YoutubeMp3Downloader = require("youtube-mp3-downloader");
 const app = express();
 
 //server port number
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 //set template engine
 app.set("view engine", "ejs");
@@ -51,12 +51,12 @@ app.post("/convert-mp3", async (req, res) => {
     const Res = await fetchAPI.json();
     console.log(Res);
 
-    for (let i = 0; i < 12;i++) {
+    for (let i = 0; i < 12; i++) {
 
         cancionesTitle.push(Res["items"][i]["snippet"]["title"]);
         cancionesImage.push(Res["items"][i]["snippet"]["thumbnails"]["medium"]["url"]);
         cancionesLinks.push(Res["items"][i]["id"]["videoId"]);
-        
+
     }
 
 
@@ -90,6 +90,9 @@ app.post("/convert-mp3", async (req, res) => {
 
 
 })
+app.get('/convert-mp3', function (req, res) {
+    res.redirect('/');
+})
 app.post("/descargar", async (req, res) => {
     const id = req.body.codSong; //lo que estara en el buscador
 
@@ -104,8 +107,12 @@ app.post("/descargar", async (req, res) => {
     const fetchResponse1 = await fetchAPI1.json();
     const enlaceDescarga = fetchResponse1["link"]
 
-    if (fetchResponse1.status === 'ok')
+    if (fetchResponse1.status === 'ok') {
         return res.redirect(`${enlaceDescarga}`)
+    } else {
+        return res.render("index")
+    }
+
 
 
 })
