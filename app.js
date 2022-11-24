@@ -43,30 +43,26 @@ app.post("/convert-mp3", async (req, res) => {
 
     const id1 = req.body.videoId; //lo que estara en el buscador
 
-    const fetchAPI = await fetch(`https://youtube138.p.rapidapi.com/search/?q=${id1}&hl=en&gl=US`, {
-        "method": "GET",
-        "headers": {
-            "X-RapidAPI-Key": process.env.API_KEY,
-            "X-RapidAPI-Host": process.env.API_HOST
-        }
+    const fetchAPI = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&key=${process.env.API_KEY}&type=video&q=${id1}`, {
+        "method": "GET"
+
     })
 
     const Res = await fetchAPI.json();
     console.log(Res);
 
-    for (let i = 0; i < 12;) {
-        if (Res["contents"][i]["channel"]||Res["contents"][i]["playlist"]) {
-            i++
-        } else {
-            cancionesTitle.push(Res["contents"][i]["video"]["title"]);
-            cancionesImage.push(Res["contents"][i]["video"]["thumbnails"][0]["url"]);
-            cancionesLinks.push(Res["contents"][i]["video"]["videoId"]);
-            i++
-        }
+    for (let i = 0; i < 12;i++) {
+
+        cancionesTitle.push(Res["items"][i]["snippet"]["title"]);
+        cancionesImage.push(Res["items"][i]["snippet"]["thumbnails"]["medium"]["url"]);
+        cancionesLinks.push(Res["items"][i]["id"]["videoId"]);
+        
     }
+
 
     console.log(cancionesTitle);
     console.log(cancionesLinks);
+
 
 
 
@@ -110,7 +106,7 @@ app.post("/descargar", async (req, res) => {
 
     if (fetchResponse1.status === 'ok')
         return res.redirect(`${enlaceDescarga}`)
-    
+
 
 })
 
