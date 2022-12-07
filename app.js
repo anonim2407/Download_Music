@@ -7,10 +7,10 @@ require('dotenv').config();
 const app = express();
 
 //server port number
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 //set template engine
-app.set("view engine", "ejs");
+app.set("view engine", "ejs", (process.env.PORT || 3000));
 app.use(express.static("public"));
 
 //needed to parse html 
