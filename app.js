@@ -2,11 +2,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
 require('dotenv').config();
-const yt = require("yt-converter");
-const timeout = require('connect-timeout');
-const ytdl = require('ytdl-core');
-const fs = require('fs');
-const YoutubeMp3Downloader = require("youtube-mp3-downloader");
 
 //create de express server
 const app = express();
