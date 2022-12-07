@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 
 //set template engine
 app.set("view engine", "ejs", (process.env.PORT || 3000));
-app.use(express.static("public"));
+app.use(express.static(__dirname + "public"));
 
 //needed to parse html 
 app.use(express.urlencoded({
