@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 //set template engine
-app.set("view engine", "ejs",  (process.env.PORT || 4000));
+app.set("view engine", "ejs");
 app.use(express.static( "public"));
 
 //needed to parse html 
